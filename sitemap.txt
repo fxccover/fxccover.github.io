@@ -1,8 +1,9 @@
 https://fxccover.github.io/2023/09/02/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/
-https://fxccover.github.io/2023/08/19/hello-world/
-https://fxccover.github.io/2023/08/20/HelloWorld/
+https://fxccover.github.io/2023/08/20/%E7%BB%84%E5%90%88%E6%95%B0/
+https://fxccover.github.io/2023/09/03/CF1864D/
 https://fxccover.github.io/archives/index.html
 https://fxccover.github.io/tags/index.html
 https://fxccover.github.io/categories/index.html
 https://fxccover.github.io/
-https://fxccover.github.io/tags/%E7%AE%97%E6%B3%95/
+https://fxccover.github.io/tags/%E9%A2%98%E8%A7%A3/
+https://fxccover.github.io/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/
