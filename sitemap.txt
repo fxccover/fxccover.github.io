@@ -8,5 +8,5 @@ https://fxccover.github.io/archives/index.html
 https://fxccover.github.io/tags/index.html
 https://fxccover.github.io/categories/index.html
 https://fxccover.github.io/
-https://fxccover.github.io/tags/%E9%A2%98%E8%A7%A3/
 https://fxccover.github.io/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/
+https://fxccover.github.io/tags/%E9%A2%98%E8%A7%A3/
