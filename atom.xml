@@ -6,7 +6,7 @@
   <link href="https://fxccover.github.io/atom.xml" rel="self"/>
   
   <link href="https://fxccover.github.io/"/>
-  <updated>2023-09-09T12:45:17.827Z</updated>
+  <updated>2023-09-11T11:37:29.988Z</updated>
   <id>https://fxccover.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>筛法求约数个数</title>
+    <link href="https://fxccover.github.io/2023/09/11/%E7%AD%9B%E6%B3%95%E6%B1%82%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0/"/>
+    <id>https://fxccover.github.io/2023/09/11/%E7%AD%9B%E6%B3%95%E6%B1%82%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0/</id>
+    <published>2023-09-11T11:09:03.000Z</published>
+    <updated>2023-09-11T11:37:29.988Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="筛法求约数个数"><a href="#筛法求约数个数" class="headerlink" title="筛法求约数个数"></a>筛法求约数个数</h1><p><img src="https://cdn.jsdelivr.net/gh/fxccover/starnest@main/img/202309111919058.png" style="zoom:50%"/></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> p[N],cnt;</span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line"><span class="type">int</span> a[N];<span class="comment">//记录i的最小质因子的次数 </span></span><br><span class="line"><span class="type">int</span> cnt[N];<span class="comment">//记录i的约数个数 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_cnt</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">d[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line"><span class="keyword">if</span>(!st[i])&#123;</span><br><span class="line">p[cnt++]=i;</span><br><span class="line">a[i]=<span class="number">1</span>;</span><br><span class="line">cnt[i]=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;i*p[j]&lt;=n;j++)&#123;</span><br><span class="line"><span class="type">int</span> m=i*p[j];</span><br><span class="line"><span class="keyword">if</span>(i%p[j]==<span class="number">0</span>)&#123;</span><br><span class="line">a[m]=a[i]+<span class="number">1</span>;</span><br><span class="line">cnt[m]=cnt[i]/(a[i]+<span class="number">1</span>)*(a[m]+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//cnt[m]=cnt[i]/a[m]*(a[m]+1);</span></span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">a[m]=<span class="number">1</span>;</span><br><span class="line">cnt[m]=cnt[i]*(a[m]+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//cnt[m]=cnt[i]*2;</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="个人理解："><a href="#个人理解：" class="headerlink" title="个人理解："></a>个人理解：</h3><p>在进行枚举时和欧拉筛线性筛出质数是一样的，这样能保证每个数只被最小质因子筛过一次。由于 $m=i*p[j]$，如果 $i$ 是 $p[j]$ 的倍数，则可以证明出 $p[j]$ 是 $i$ 和 $m$ 的最小质因数，则 $m$ 相对于 $i$ 来说比它多乘了一个共有的最小质因子 $p[j]$ ；如果 $i$ 不是 $p[j]$ 的倍数，说明 $m$ 比 $i$ 多乘了一个它没有的质因子 $p[j]$ 。</p><h4 id="重点：对于每个数而言，约数个数是唯一分解定理之后，每个质因数指数加1后累乘"><a href="#重点：对于每个数而言，约数个数是唯一分解定理之后，每个质因数指数加1后累乘" class="headerlink" title="重点：对于每个数而言，约数个数是唯一分解定理之后，每个质因数指数加1后累乘"></a>重点：对于每个数而言，约数个数是唯一分解定理之后，每个质因数指数加1后累乘</h4>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;筛法求约数个数&quot;&gt;&lt;a href=&quot;#筛法求约数个数&quot; class=&quot;headerlink&quot; title=&quot;筛法求约数个数&quot;&gt;&lt;/a&gt;筛法求约数个数&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/fxccover/sta</summary>
+      
+    
+    
+    
+    
+    <category term="算法模板" scheme="https://fxccover.github.io/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>欧拉函数</title>
