@@ -6,7 +6,7 @@
   <link href="https://fxccover.github.io/atom.xml" rel="self"/>
   
   <link href="https://fxccover.github.io/"/>
-  <updated>2023-09-11T11:37:29.988Z</updated>
+  <updated>2023-09-11T12:14:37.051Z</updated>
   <id>https://fxccover.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>筛法求约数和</title>
+    <link href="https://fxccover.github.io/2023/09/11/%E7%AD%9B%E6%B3%95%E6%B1%82%E7%BA%A6%E6%95%B0%E5%92%8C/"/>
+    <id>https://fxccover.github.io/2023/09/11/%E7%AD%9B%E6%B3%95%E6%B1%82%E7%BA%A6%E6%95%B0%E5%92%8C/</id>
+    <published>2023-09-11T12:02:11.000Z</published>
+    <updated>2023-09-11T12:14:37.051Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="筛法求约数和"><a href="#筛法求约数和" class="headerlink" title="筛法求约数和"></a>筛法求约数和</h1><p><img src="https://cdn.jsdelivr.net/gh/fxccover/starnest@main/img/202309112003365.png" style="zoom:50%"/></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> p[N],cnt;</span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line"><span class="type">int</span> f[N];<span class="comment">//记录i的最小质因子的1+p^1+p^2+...+p^k </span></span><br><span class="line"><span class="type">int</span> sum[N];<span class="comment">//记录i的约数和 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_cnt</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">d[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line"><span class="keyword">if</span>(!st[i])&#123;</span><br><span class="line">p[cnt++]=i;</span><br><span class="line">f[i]=sum[i]=i+<span class="number">1</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;i*p[j]&lt;=n;j++)&#123;</span><br><span class="line"><span class="type">int</span> m=i*p[j];</span><br><span class="line"><span class="keyword">if</span>(i%p[j]==<span class="number">0</span>)&#123;</span><br><span class="line">f[m]=f[i]*p[j]+<span class="number">1</span>;</span><br><span class="line">sum[m]=sum[i]/f[i]*f[m];</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">f[m]=p[j]+<span class="number">1</span>;</span><br><span class="line">sum[m]=sum[i]*f[m];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="总结-欧拉筛求欧拉函数、约数个数、约数和都是在欧拉筛的模板上进行改动的，不同需求采用不同的更新方式。"><a href="#总结-欧拉筛求欧拉函数、约数个数、约数和都是在欧拉筛的模板上进行改动的，不同需求采用不同的更新方式。" class="headerlink" title="总结:欧拉筛求欧拉函数、约数个数、约数和都是在欧拉筛的模板上进行改动的，不同需求采用不同的更新方式。"></a>总结:欧拉筛求欧拉函数、约数个数、约数和都是在欧拉筛的模板上进行改动的，不同需求采用不同的更新方式。</h4>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;筛法求约数和&quot;&gt;&lt;a href=&quot;#筛法求约数和&quot; class=&quot;headerlink&quot; title=&quot;筛法求约数和&quot;&gt;&lt;/a&gt;筛法求约数和&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/fxccover/starnes</summary>
+      
+    
+    
+    
+    
+    <category term="算法模板" scheme="https://fxccover.github.io/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>筛法求约数个数</title>
